@@ -21,7 +21,7 @@ export default function BottomTabBar({ state, descriptors, navigation }) {
                 if (options.imageIcon) {
                     const icon = isFocused ? imageIcon.activePath : imageIcon.inactivePath;
 
-                    console.log(icon)
+                    console.log(icon) 
                 }
 
                 const onPress = () => {
