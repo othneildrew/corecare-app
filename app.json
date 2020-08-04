@@ -4,11 +4,13 @@
     "slug": "corecare-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "backgroundColor": "#ffffff",
+    "primaryColor": "#41A8A2",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#e5e5e5"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

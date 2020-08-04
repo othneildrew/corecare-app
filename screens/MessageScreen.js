@@ -2,11 +2,19 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import MessageCard from '../components/MessageCard';
 
 
 export default function MessageScreen({ navigation }) {
     return (
         <View style={styles.container}>
+
+            <MessageCard
+                name='Percy Jackson'
+                time='9:00am'
+                isOnline={true}
+            />
+
            <Text>MessageScreen of app</Text> 
            <StatusBar style='auto' />
         </View>
@@ -16,8 +24,8 @@ export default function MessageScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ffffff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // backgroundColor: '#e5e5e5',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
 });
