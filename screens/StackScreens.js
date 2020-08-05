@@ -8,6 +8,7 @@ import SearchScreen from './SearchScreen'
 import HomeScreen from './HomeScreen';
 import EarningScreen from './EarningScreen';
 import ProfileScreen from './ProfileScreen';
+import ChatScreen from './ChatScreen';
 
 // Create stack navigators
 const MessageStack  = createStackNavigator();
@@ -22,7 +23,7 @@ const SettingStack  = createStackNavigator();
 export function MessageStackScreen() {
     return (
         <MessageStack.Navigator>
-            <MessageStack.Screen name='Message' component={ MessageScreen } />
+            <MessageStack.Screen name='Chat' component={ MessageScreen } />
         </MessageStack.Navigator>
     );
 }

@@ -24,7 +24,7 @@ export default function MessageScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: '#e5e5e5',
+        backgroundColor: '#e5e5e5',
         // alignItems: 'center',
         // justifyContent: 'center',
     },

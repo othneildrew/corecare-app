@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Image } from 'react-native';
 import { AppLoading } from 'expo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -31,6 +32,7 @@ export default function App() {
         Montserrat_700Bold,
     });
 
+    // Show the splash screen if the assets (fonts, etc.) hasn't finished loading
     if (! fontsLoaded) {
         return <AppLoading />;
     }
@@ -40,65 +42,69 @@ export default function App() {
             <Tab.Navigator
                 initialRouteName='Home'
                 tabBar={ (props) => <BottomTabBar {...props} /> }
+                // screenOptions={({ route }) => ({
+                    // tabBarIcon: ({ focused, color, size}) => {
+                    //     let iconName = `${route.toLowerCase()}`;
+                    //     let iconPath = focused ? ;
+                    //     return <Image source={icon} />;
+                    // }
+                // })}
+                tabBarOptions={{
+                    // activeTintColor: '#'
+                    style: {
+                        height: 72,
+                        backgroundColor: '#e5e5e5',
+                    }
+                }}
             >
 
                 <Tab.Screen name='Message'
                     component={ MessageStackScreen }
                     options={{
-                        icon: { name: 'chat', width: 36, height: 24 }
-                    }}
-                    imageIcon={{
-                        activePath: 'active path',
-                        inactivePath: 'inactive',
-                        size: { width: 21, height: 20 },
+                        imageIcon: {
+                            activePath: require('./assets/icons/chat_white.png'),
+                            inactivePath: require('./assets/icons/chat.png'),
+                        }
                     }}
                 />
 
                 <Tab.Screen name='Search'
                     component={ SearchStackScreen }
                     options={{
-                        icon: { name: 'search', width: 21, height: 20 }
-                    }}
-                    imageIcon={{
-                        activePath: 'active path',
-                        inactivePath: 'inactive',
-                        size: { width: 21, height: 20 },
+                        imageIcon: {
+                            activePath: require('./assets/icons/search_white.png'),
+                            inactivePath: require('./assets/icons/search.png'),
+                        }
                     }}
                 />
 
                 <Tab.Screen name='Home'
                     component={ HomeStackScreen }
                     options={{
-                        icon: { name: 'home', width: 30, height: 23 }
-                    }}
-                    imageIcon={{
-                        activePath: 'active path',
-                        inactivePath: 'inactive',
-                        size: { width: 21, height: 20 },
+                        imageIcon: {
+                            activePath: require('./assets/icons/home_white.png'),
+                            inactivePath: require('./assets/icons/home.png'),
+                        }
                     }}
                 />
                 
                 <Tab.Screen name='Earning'
                     component={ EarningStackScreen }
                     options={{
-                        icon: { name: 'earnings', width: 12, height: 19 }
-                    }}
-                    imageIcon={{
-                        activePath: 'active path',
-                        inactivePath: 'inactive',
-                        size: { width: 21, height: 20 },
+                        imageIcon: {
+                            activePath: require('./assets/icons/earnings_white.png'),
+                            inactivePath: require('./assets/icons/earnings.png'),
+                        }
                     }}
                 />
 
                 <Tab.Screen name='Profile'
                     component={ ProfileStackScreen }
                     options={{
-                        icon: { name: 'profile', width: 19, height: 23 }
-                    }}
-                    imageIcon={{
-                        activePath: 'active path',
-                        inactivePath: 'inactive',
-                        size: { width: 21, height: 20 },
+                        imageIcon: {
+                            activePath: require('./assets/icons/profile_white.png'),
+                            inactivePath: require('./assets/icons/profile.png'),
+                        }
                     }}
                 />
             </Tab.Navigator>

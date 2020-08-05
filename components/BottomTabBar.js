@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { ImageIcon } from '../components/ImageIcon';
 
 
 export default function BottomTabBar({ state, descriptors, navigation }) {
@@ -17,12 +16,8 @@ export default function BottomTabBar({ state, descriptors, navigation }) {
             { state.routes.map((route, index) => {
                 const { options } = descriptors[route.key];
                 const isFocused = state.index === index;
+                const icon = isFocused ? options.imageIcon.activePath : options.imageIcon.inactivePath;
 
-                if (options.imageIcon) {
-                    const icon = isFocused ? imageIcon.activePath : imageIcon.inactivePath;
-
-                    console.log(icon) 
-                }
 
                 const onPress = () => {
                     const event = navigation.emit({
@@ -56,24 +51,7 @@ export default function BottomTabBar({ state, descriptors, navigation }) {
                         onLongPress={ onLongPress }
                         key={index}
                     >
-
-                        <Image
-                            source={ require(`../assets/icons/profile.png`) }
-                            // style={{
-                            //     width: options.icon?.width || 24,
-                            //     height: options.icon?.height || 24,
-                            // }}
-                        />
-
-
-
-
-
-
-
-
-
-
+                        <Image source={ icon } />
                     </TouchableOpacity>
                 );
             }) }
@@ -90,6 +68,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+        position: 'relative',
         width: '100%',
         height: 72,
         borderTopLeftRadius: 40,
@@ -98,7 +77,7 @@ const styles = StyleSheet.create({
         // shadowRadius: 5,
         // shadowColor: '#0000ff',
         // boxShadow: '0px 0px 5px rgba(0, 101, 95, 0.1)',
-        backgroundColor: 'black',
+        backgroundColor: '#ffffff',
     },
     tab: {
         justifyContent: 'center',
@@ -113,6 +92,10 @@ const styles = StyleSheet.create({
         width: 51,
         height: 51,
         borderRadius: 50,
+        // borderWidth: 6,
+        // borderColor: '#e5e5e5',
+        // outline
         backgroundColor: '#41A8A2',
+        transform: [{ translateY: -20 }]
     }
 });
