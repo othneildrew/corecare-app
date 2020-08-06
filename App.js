@@ -42,6 +42,7 @@ export default function App() {
             <Tab.Navigator
                 initialRouteName='Home'
                 tabBar={ (props) => <BottomTabBar {...props} /> }
+                // TODO[BUGFIX]: refactor to use screen options instead of custom tabbar. Bug on desktop where icons are not showing.
                 // screenOptions={({ route }) => ({
                     // tabBarIcon: ({ focused, color, size}) => {
                     //     let iconName = `${route.toLowerCase()}`;
