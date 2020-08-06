@@ -10,6 +10,11 @@ import {
     Montserrat_600SemiBold,
     Montserrat_700Bold,
 } from '@expo-google-fonts/montserrat';
+import {
+    MontserratAlternates_400Regular,
+    MontserratAlternates_600SemiBold,
+    MontserratAlternates_700Bold,
+} from '@expo-google-fonts/montserrat-alternates'
 import BottomTabBar from './components/BottomTabBar';
 
 // Import stack screens
@@ -30,6 +35,9 @@ export default function App() {
         Montserrat_400Regular,
         Montserrat_600SemiBold,
         Montserrat_700Bold,
+        MontserratAlternates_400Regular,
+        MontserratAlternates_600SemiBold,
+        MontserratAlternates_700Bold,
     });
 
     // Show the splash screen if the assets (fonts, etc.) hasn't finished loading

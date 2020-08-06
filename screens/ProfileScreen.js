@@ -1,14 +1,31 @@
 
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import LoginModal from '../modals/LoginModal';
 
 
 export default function ProfileScreen({ navigation }) {
     return (
         <View style={styles.container}>
-           <Text>ProfileScreen of app</Text> 
-           <StatusBar style='auto' />
+           
+           
+           
+           {/* <Text>ProfileScreen of app</Text> 
+           <StatusBar style='auto' /> */}
+
+
+
+
+           <LoginModal />
+
+
+
+
+
+
+
+
         </View>
     );
 }
